@@ -12,7 +12,7 @@ Tailscale lets you easily manage access to private resources, quickly SSH into d
 
 >Private services located in a VPC are only available for tailscale devices that posseses the needed permissions. Permissions are being managed with a GitOps action, you can find it at: [percy-liberty-acl-tailscale](https://github.com/gitMLS/percy-liberty-acl-tailscale)
 
-![Tailscale Subnet Router architecture](https://docs.gruntwork.io/assets/images/tailscale-subnet-router-architecture-e55ea6b8a3cd3977ddb4520d4db25c5a.png "Tailscale Subnet Router architecture")
+<img src="https://docs.gruntwork.io/assets/images/tailscale-subnet-router-architecture-e55ea6b8a3cd3977ddb4520d4db25c5a.png" width="400" alt="Tailscale Subnet Router architecture">
 
 ***Tailscale Subnet Router architecture***
 
