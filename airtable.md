@@ -14,7 +14,7 @@ Top-level and detailed documentation about integrating **Airtable** with the scr
 
 ***To see repository content, granted access is required beforehand.***
 
-- [Public Read The Docs](https://ec2-instance-descriptor.readthedocs.io/en/latest/)
+- [Installation And Usage](https://ec2-instance-descriptor.readthedocs.io/en/latest/examples.html#installation-usage)
 
 - [Integration](https://github.com/jesse0099/EC2_INSTANCE_DESCRIPTOR#readme)
 
