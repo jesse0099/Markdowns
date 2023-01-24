@@ -1,12 +1,35 @@
 # Current Case
 
-Sometimes, clients have special needs for their SSL certificates, or just already 
-have a workflow that issue certificates. Whathever the case, this page describe
-the process necessary to import them to ACM (Amazon Certificates Manager), and
+Sometimes, clients have special needs for their SSL certificates or already 
+have a workflow that issues certificates. Whatever the case, this page describes
+the process necessary to import them to ACM (AWS Certificates Manager) and
 associate them with the corresponding resources.
 
 # Certificate Format
 
-Certificates can be send by client as a **pair of files**, one containing the **hashed certificate** (**.pem file**), and the other, the corrresponding **private key** (**.key File**).
+The client can send certificates as a **pair of files**, one containing the **hashed certificate** (**.pem file**), and the other, the corresponding **private key** (**.key File**).
 
-Other format the client can use to send the certificate is in a Personal Information Exchange file (**.pfx file**). For this format the client also needs to send a **password** to operate over the PFX file.
+Another format the client can use to send the certificate is a Personal Information Exchange file (**.pfx file**). For this format, the client must also send a **password** to operate over the PFX file.
+
+## **Importing from a cert-key file pair** 
+
+**Requires:**
+
+- cert.pem
+- cert-key.key
+
+### **Converts cert-key.key into PEM format**
+
+AWS ACM requires the private key to be in PEM format, so we will have to use a tool for that. Openssl is widely available, and open source. It is recommended.
+
+***Using OpenSSl***
+
+> openssl rsa -in {path_to/cert-key.key} -text > {path_to/cert.pem}
+
+### **Import cert-key file pair to ACM**
+
+The cert.pem and cert-key.key files are all you need to import the certs to ACM.
+
+- [Import from console](https://docs.aws.amazon.com/acm/latest/userguide/import-certificate-api-cli.html#import-certificate-api:~:text=Import%20(AWS%20CLI)-,Import%20(console),-The%20following%20example)
+
+- [Import from cli](https://docs.aws.amazon.com/acm/latest/userguide/import-certificate-api-cli.html#import-certificate-api:~:text=choose%20Import.-,Import%20(AWS%20CLI),-The%20following%20example)
