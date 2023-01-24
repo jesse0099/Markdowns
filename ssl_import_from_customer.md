@@ -20,15 +20,15 @@ Another format the client can use to send the certificate is a Personal Informat
 
 ### **Converts cert-key.key into PEM format**
 
-AWS ACM requires the private key to be in PEM format, so we will have to use a tool for that. Openssl is widely available, and open source. It is recommended.
+AWS ACM requires the private key to be in PEM format, so we will have to use a tool. OpenSSL is widely available and open source. It is recommended.
 
-***Using OpenSSl***
+***Using OpenSSL***
 
-> openssl rsa -in {path_to/cert-key.key} -text > {path_to/cert.pem}
+> openssl rsa -in {path_to/cert-key.key} -text > {path_to/cert-key.pem}
 
-### **Import cert-key file pair to ACM**
+### **Import cert.pem and cert-key.pem file pair to ACM**
 
-The cert.pem and cert-key.key files are all you need to import the certs to ACM.
+The cert.pem and cert-key.pem files are all you need to import the certs to ACM.
 
 - [Import from console](https://docs.aws.amazon.com/acm/latest/userguide/import-certificate-api-cli.html#import-certificate-api:~:text=Import%20(AWS%20CLI)-,Import%20(console),-The%20following%20example)
 
