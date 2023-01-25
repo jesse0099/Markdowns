@@ -13,22 +13,46 @@ Another format the client can use to send the certificate is a Personal Informat
 
 ## **Importing from a cert-key file pair** 
 
-**Requires:**
+***Requires:***
 
 - cert.pem
 - cert-key.key
 
 ### **Converts cert-key.key into PEM format**
 
-AWS ACM requires the private key to be in PEM format, so we will have to use a tool. OpenSSL is widely available and open source. It is recommended.
+***Generated files:***
+
+- cert.pem
+- no-password-cert-key.pem
+
+ACM requires the private key to be in PEM format, so we will have to use a tool. OpenSSL is widely available and open source. It is recommended.
 
 ***Using OpenSSL***
 
-> openssl rsa -in {path_to/cert-key.key} -text > {path_to/cert-key.pem}
+> openssl rsa -in {path_to/cert-key.key} -text > {path_to/no-password-cert-key.pem}
 
-### **Import cert.pem and cert-key.pem file pair to ACM**
+## **Importing from a PFX file** 
 
-The cert.pem and cert-key.pem files are all you need to import the certs to ACM.
+***Requires:*** 
+
+- cert.pfx
+- password
+
+### **Converts the PFX encoded data into PEM format**
+
+***Generated files*:**
+
+- cert.pem
+- no-password-cert-key.pem
+- ca-chain.pem (PEM file containing the root certificate of the CA.)
+
+#### **Get no-password-cert-key.pem from PFX**
+
+> openssl pkcs12 -in {path_to/cert.pfx} -nocerts -out {path_to/no-password-cert-key.pem}
+
+## **Import cert.pem and no-password-cert-key.pem file pair to ACM**
+
+The cert.pem and no-password-cert-key.pem files are all you need to import the certs to ACM. The root certificate of the CA is not required.
 
 - [Import from console](https://docs.aws.amazon.com/acm/latest/userguide/import-certificate-api-cli.html#import-certificate-api:~:text=Import%20(AWS%20CLI)-,Import%20(console),-The%20following%20example)
 
