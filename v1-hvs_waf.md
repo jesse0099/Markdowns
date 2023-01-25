@@ -24,8 +24,29 @@ AWS WAF implementation supports hundreds of rules that can inspect any part of t
 
 We're using the next set of WAF components:
     
-- AWS WAF ACL
-
+- AWS WAF ACLs
+    - ***v1-hvs-waff*** 
+>
 - AWS WAF Rule groups
-
+    - ***v1-hvs-ip-whitelist-rule***
+>
 - AWS WAF Managed Rules
+    - ***AWS-AWSManagedRulesBotControlRuleSet***
+    - ***AWS-AWSManagedRulesAmazonIpReputationList***
+    - ***AWS-AWSManagedRulesPHPRuleSet***
+>
+- Custom Rules
+    - ***Geolocation***
+
+# Web ACLs
+
+Gives us fine-grained control over all of the HTTP(S) web requests that our protected resource responds to.
+
+***v1-hvs-waff***
+
+# Rule groups
+
+Rule groups are reusable set of rules we can add to a web ACL.
+
+***v1-hvs-ip-whitelist-rule:***
+
