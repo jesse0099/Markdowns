@@ -1,5 +1,3 @@
-# Tailscale
-
 ##  What is
 
 Tailscale is a surprisingly easy to use VPN that allows a fine grained control over all devices in a tailnet (network made of tailscale devices from an organization). [Tailscale](https://tailscale.com/)
