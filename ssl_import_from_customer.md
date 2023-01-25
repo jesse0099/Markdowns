@@ -18,6 +18,8 @@ Another format the client can use to send the certificate is a Personal Informat
 - cert.pem
 - cert-key.key
 
+*In case the cert-key.key file is protected with a passphrase; it must be provided.* 
+
 ### **Converts cert-key.key into PEM format**
 
 ***Generated files:***
