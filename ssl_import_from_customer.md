@@ -25,7 +25,7 @@ Another format the client can use to send the certificate is a Personal Informat
 - cert.pem
 - no-password-cert-key.pem
 
-ACM requires the private key to be in PEM format, so we will have to use a tool. OpenSSL is widely available and open source. It is recommended.
+ACM requires the private key to be in PEM format, so we will have to use a tool. OpenSSL is widely available and open source. It is recommended ([AWS Docs](https://aws.amazon.com/blogs/security/how-to-import-pfx-formatted-certificates-into-aws-certificate-manager-using-openssl/)).
 
 ***Using OpenSSL***
 
@@ -48,7 +48,19 @@ ACM requires the private key to be in PEM format, so we will have to use a tool.
 
 #### **Get no-password-cert-key.pem from PFX**
 
-> openssl pkcs12 -in {path_to/cert.pfx} -nocerts -out {path_to/no-password-cert-key.pem}
+> openssl pkcs12 -in {path_to/cert.pfx} -nocerts -out {path_to/password-cert-key.pem}
+
+The previous step generates a password-protected private key. To remove the password, run the following command.
+
+> openssl rsa -in {path_to/cert.pfx} -nocerts -out {path_to/no-password-cert-key.pem}
+
+#### **Get cert.pem from PFX**
+
+> openssl pkcs12 -in {path_to/cert.pfx} -clcerts -nokeys -out {path_to/cert.pem}
+
+#### **Get ca-chain.pem from PFX**
+
+> openssl pkcs12 -in {path_to/cert.pfx} -cacerts -nokeys -chain -out {path_to/ca-chain.pem}
 
 ## **Import cert.pem and no-password-cert-key.pem file pair to ACM**
 
