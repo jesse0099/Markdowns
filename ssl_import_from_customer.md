@@ -52,7 +52,7 @@ ACM requires the private key to be in PEM format, so we will have to use a tool.
 
 The previous step generates a password-protected private key. To remove the password, run the following command.
 
-> openssl rsa -in {path_to/cert.pfx} -nocerts -out {path_to/no-password-cert-key.pem}
+> openssl rsa -in {path_to/password-cert-key.pem} -text > {path_to/no-password-cert-key.pem}
 
 #### **Get cert.pem from PFX**
 
