@@ -50,14 +50,18 @@ Rule groups are reusable set of rules we can add to a web ACL.
 
 ***v1-hvs-ip-whitelist-rule:***
 
-It's composed by a set of rules that allow each team IPs access for v1-hvs. The only exception is **percy-aws-resources-ip-list** which is intended to be used as a list of allowed AWS resources IPs.
+It's composed of rules that allow each team access to v1-hvs server. The only exception is **percy-aws-resources-ip-list** which is intended to be used as a list of allowed AWS resources IPs.
 
-| Rule name                 | Action     | Current IPs     |
-|---                        |---         |---              |
-|bamboo-team-ip-list        |Allow       |                 |
-|sharman-team-ip-list       |Allow       |                 |
-|elliman-team-ip-list       |Allow       |                 |
-|percy-aws-resources-ip-list|Allow
-
-Allow access to v1-hvs.
+| Rule name                 | Action     | Current IPs  |
+|---                        |---         |---           |
+|bamboo-team-ip-list  |Allow |186.15.131.65/32 |
+|   |   |181.194.226.200/32 |
+|   |   |190.113.110.47/32 |          
+|   |   |   |
+|sharman-team-ip-list |Allow |179.27.68.154/32 |
+|   |   |   |
+|elliman-team-ip-list |Allow |92.84.52.66/32 |
+|   |   |182.74.119.238/32|
+|   |   |   |
+|percy-aws-reources-ip-list |Allow |13.58.172.165/32 |
 
