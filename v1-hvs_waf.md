@@ -4,7 +4,7 @@ AWS WAF is a web application firewall service that lets us monitor web requests 
 
 # How AWS WAF works
 
-We use AWS WAF to control how our protected resources respond to HTTP(S) web requests. We do this by defining a web access control list (ACL) and associating it with one or more web application resources we want to protect. This allows us to respond to requests either with an HTTP 403 status code (Forbidden) or with a custom response,
+We use AWS WAF to control how our protected resources respond to HTTP(S) web requests. We do this by defining a web access control list (ACL) and associating it with one or more web application resources we want to protect. This allows us to respond to requests either with an HTTP 403 status code (Forbidden) or with a custom response.
 
 # Benefits 
 
@@ -60,12 +60,12 @@ It's composed of rules (IP sets) that allow each team access to v1-hvs server. T
 |   |   |181.194.226.200/32 |
 |   |   |190.113.110.47/32 |          
 |   |   |   |
-|*sharman-team-ip-list* |Allow |179.27.68.154/32 |
+|*sharmams-team-ip-list* |Allow |179.27.68.154/32 |
 |   |   |   |
 |*elliman-team-ip-list* |Allow |92.84.52.66/32 |
 |   |   |182.74.119.238/32|
 |   |   |   |
-|*percy-aws-reources-ip-list* |Allow |13.58.172.165/32 |
+|*percy-aws-resources-ip-list* |Allow |13.58.172.165/32 |
 
 
 # Managed Rules
@@ -81,5 +81,11 @@ The below-managed rules make use of **AWS WAF intelligent threat mitigation**. [
 # Use-case-specific rule groups
 
 ***PHPRuleSet:*** The PHP application rule group contains rules that block request patterns associated with exploiting vulnerabilities specific to the use of the PHP programming language, including the injection of unsafe PHP functions. This can help prevent the exploitation of vulnerabilities that permit attackers to remotely run code or commands for which they are not authorized.
+
+# Custom Rules
+
+AWS allows us to write custom rules, providing a set of basic rule units to define our firewall logic no matter how complex it could be. For example, we could want to avoid traffic from certain countries. With AWS geolocation matches, It's an easy task.
+
+***Geolocation:*** It blocks requests from countries different from Canada and the United States.
 
 Learn more on: [Developer Guide](https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html)
