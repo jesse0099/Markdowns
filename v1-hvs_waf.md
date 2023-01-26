@@ -42,11 +42,22 @@ We're using the next set of WAF components:
 
 Gives us fine-grained control over all of the HTTP(S) web requests that our protected resource responds to.
 
-***v1-hvs-waff***
+***v1-hvs-waff:***
 
 # Rule groups
 
 Rule groups are reusable set of rules we can add to a web ACL.
 
 ***v1-hvs-ip-whitelist-rule:***
+
+It's composed by a set of rules that allow each team IPs access for v1-hvs. The only exception is **percy-aws-resources-ip-list** which is intended to be used as a list of allowed AWS resources IPs.
+
+| Rule name                 | Action     | Current IPs     |
+|---                        |---         |---              |
+|bamboo-team-ip-list        |Allow       |                 |
+|sharman-team-ip-list       |Allow       |                 |
+|elliman-team-ip-list       |Allow       |                 |
+|percy-aws-resources-ip-list|Allow
+
+Allow access to v1-hvs.
 
