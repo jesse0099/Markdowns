@@ -40,5 +40,8 @@ We have the option to use SMTP or the Email API for flexibility.
 
 # **Email Testing**
 
+Mailtrap offers an Email Sandbox, allowing SMTP traffic capturing from different environments (Dev, staging...). Also, a flexible Email API can automate test flows and scenarios.
 
-#
+Mailtrap also offers a way to analyze email content for spam scores and validate HTML/CSS content.  
+
+[More...](https://mailtrap.io/email-sandbox/)
