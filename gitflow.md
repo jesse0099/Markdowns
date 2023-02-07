@@ -31,3 +31,6 @@ One potential inconvenience of using the Gitflow Workflow with DevOps CI/CD is t
 
 ## Conclusion
 The Gitflow Workflow is a popular branching model that helps developers manage the development of a project. By following a clear and defined workflow, Gitflow enables teams to collaborate effectively, maintain a clean codebase, and ensure that the production-ready code is always in good shape. However, when using Gitflow with DevOps CI/CD, teams may encounter some complexity in automating the build, test, and deployment process for each separate branch.
+
+
+[More...](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow#:~:text=What%20is%20Gitflow%3F,lived%20branches%20and%20larger%20commits.%20?)
