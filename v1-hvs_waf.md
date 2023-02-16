@@ -42,7 +42,7 @@ We're using the next set of WAF components:
 >
 - Custom Rules
     - ***Geolocation***
-    - [BLOCK](https://us-east-1.console.aws.amazon.com/wafv2/homev2/web-acl/rule/v1-hvs-waff/482977c8-6aa2-42ab-8c62-127ac0145ba0/BLOCK?region=us-east-1)
+    - ***[BLOCK](https://us-east-1.console.aws.amazon.com/wafv2/homev2/web-acl/rule/v1-hvs-waff/482977c8-6aa2-42ab-8c62-127ac0145ba0/BLOCK?region=us-east-1)***
 # Web ACLs
 
 It gives us fine-grained control over all HTTP(S) web requests that our protected resource responds to.
