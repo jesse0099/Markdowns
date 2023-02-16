@@ -30,6 +30,9 @@ We're using the next set of WAF components:
 - AWS WAF Rule groups
     - ***v1-hvs-ip-whitelist-rule***
 >
+- AWS Rate-based Rules
+    - ***[rate-limiting ](https://us-east-1.console.aws.amazon.com/wafv2/homev2/web-acl/rule/v1-hvs-waff/482977c8-6aa2-42ab-8c62-127ac0145ba0/rate-limiting?region=us-east-1)***
+>
 - AWS WAF Managed Rules
     - ***AWS-AWSManagedRulesBotControlRuleSet***
     - ***AWS-AWSManagedRulesAmazonIpReputationList***
@@ -39,7 +42,7 @@ We're using the next set of WAF components:
 >
 - Custom Rules
     - ***Geolocation***
-
+    - [BLOCK](https://us-east-1.console.aws.amazon.com/wafv2/homev2/web-acl/rule/v1-hvs-waff/482977c8-6aa2-42ab-8c62-127ac0145ba0/BLOCK?region=us-east-1)
 # Web ACLs
 
 It gives us fine-grained control over all HTTP(S) web requests that our protected resource responds to.
@@ -67,6 +70,20 @@ It's composed of rules (IP sets) that allow each team access to v1-hvs server. T
 |   |   |   |
 |*percy-aws-resources-ip-list* |Allow |13.58.172.165/32 |
 
+# Rate-based Rules
+
+The AWS WAF rate-based rule type is a type of rule that can be used to block or allow traffic based on the number of requests made to a particular resource in a given time period.
+
+How it Works
+The rate-based rule works by tracking the number of requests made to a particular resource, such as a website or API, in a given time period. If the number of requests exceeds a certain threshold, the rule can block or allow traffic to that resource.
+
+***[rate-limiting ](https://us-east-1.console.aws.amazon.com/wafv2/homev2/web-acl/rule/v1-hvs-waff/482977c8-6aa2-42ab-8c62-127ac0145ba0/rate-limiting?region=us-east-1)***
+
+It's composed of rules (IP sets) that apply a rate-limiting policy to
+the ***[BLOCK](https://us-east-1.console.aws.amazon.com/wafv2/homev2/ip-set/BLOCK/49cbd199-6c95-43bc-93db-48205f2a3bbc?region=us-east-1)*** IP set.
+
+
+
 
 # Managed Rules
 
@@ -88,4 +105,7 @@ AWS allows us to write custom rules, providing a set of basic rule units to defi
 
 ***Geolocation:*** It blocks requests from countries different from Canada and the United States.
 
+***[BLOCK](https://us-east-1.console.aws.amazon.com/wafv2/homev2/web-acl/rule/v1-hvs-waff/482977c8-6aa2-42ab-8c62-127ac0145ba0/BLOCK?region=us-east-1):*** It blocks traffic from unique IP requests and IP ranges.
+
 Learn more on: [Developer Guide](https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html)
+
