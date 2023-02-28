@@ -64,6 +64,20 @@ The previous step generates a password-protected private key. To remove the pass
 
 > openssl pkcs12 -in {path_to/cert.pfx} -cacerts -nokeys -chain -out {path_to/ca-chain.pem}
 
+## **Certificate with outdated encryption algorithm**
+
+If and unsupported encryption algorithm error appears during any step of the above
+described process, the certificate is probably encrypted with an outdated or too weak 
+algorithm. Two options to import it successfully to ACM are described below.
+
+### **OpenSSL legacy option**
+
+If ACM supports the algorithm ([Prerequisites for importing certificates](https://docs.aws.amazon.com/acm/latest/userguide/import-certificate-prerequisites.html)), using the ***-legacy*** option in the commands where the error is prompted should be enough, the rest of the process remains the same.
+
+### **AWC cipher suit auto morphe**
+
+[Supported cipher suites for auto morphe when uploading to ACM.](https://buyermls.atlassian.net/browse/DSO-1343)
+
 ## **Import cert.pem and no-password-cert-key.pem file pair to ACM.**
 
 The cert.pem and no-password-cert-key.pem files are all you need to import the certs to ACM. The root certificate of the CA is not required.
