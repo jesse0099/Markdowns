@@ -4,12 +4,19 @@
 
 ## Resources
 
+All resources managed by this template are tagged and named following naming conventions described in the next confluence page [AWS Tagging/Naming Conventions](https://buyermls.atlassian.net/wiki/spaces/PER/pages/2706374657/AWS+Tagging+Naming+Conventions) with the following values for cost tracking and ease of querying related ones:
+
+**Project :** signals
+**CostCode :** signals
+**Environment :** dev, prod
+**Created_By :** Extracted from the last deploy associated IAM user.
+**Terraform :** https://github.com/gitMLS/aws_signlas_infraestructure
+
 ### Template
 
 ***[IAC](https://github.com/gitMLS/aws_signlas_infraestructure)***
 
-The template can be used to create a similar infrastructure. The currently managed states will be uploaded to an S3 file. Instructions for creating a new stage, similar infrastructure, and/or accessing the currently deployed infrastructure will be provided in a further section on this page.
-
+The template can be used to create a similar infrastructure. The currently managed states will be uploaded to an S3 bucket. Instructions for creating a new stage on the existing infrastructure, deploying similar infrastructure on another account, and/or accessing the currently deployed infrastructure will be provided in a further section on this page.
 
 ### List of AWS resources managed by this template:
 
@@ -30,4 +37,10 @@ The template can be used to create a similar infrastructure. The currently manag
 * aws_s3_bucket.signal_bucket
 * aws_security_group.signal_firehose_ingress
 
+## Template usage
 
+### Deploying new infrastructure
+
+### Deploying new stage on existing infrastructure
+
+### Destroying stage on existing infrastructure
