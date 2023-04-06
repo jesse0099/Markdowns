@@ -1,6 +1,6 @@
 # Overview
 
-![Infraestructure Diagram](https://drive.google.com/uc?id=1Of6KIhYgII2ElKOE1cca-Xbbba8Ds4-C)
+![alt text](https://drive.google.com/uc?id=1Of6KIhYgII2ElKOE1cca-Xbbba8Ds4-C)
 
 ## Resources
 
@@ -72,10 +72,20 @@ The template can be used to create a similar infrastructure. The currently manag
 
 2. Donwload the used terraform.tfvars file and the associated Terraform state management files
 
-    Currently, no defined default location for this purpose exists. This section will be updated
-    when the location is available.
+    Currently, no defined default location for this purpose exists. This section will be updated when the location is available.
 
-3. Deploy it.
+3. Modify the terraforms.tfvars file.
+
+    ```bash
+    environment = "dev"
+    ```
+4. Create new Terraform workspace.
+
+    ```bash
+    terraform workspace new {workspace_name}
+    ```
+
+4. Deploy it.
     
     Deploy the infrastructure using the following commands:
     ```bash
@@ -86,3 +96,22 @@ The template can be used to create a similar infrastructure. The currently manag
 
 
 ### Destroying stage on existing infrastructure
+
+1. Download the repository content and install Terraform.
+
+2. Donwload the used terraform.tfvars file and the associated Terraform state management files
+
+    Currently, no defined default location for this purpose exists. This section will be updated when the location is available.
+
+3. Select the Terraform workspace associated with the stage.
+
+    ```bash
+     terraform workspace select {workspace_name}
+    ```
+
+4. Destroy it.
+    
+    Destroy the stage using the following commands:
+    ```bash
+    terraform destroy
+    ```
