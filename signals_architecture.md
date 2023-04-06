@@ -6,11 +6,11 @@
 
 All resources managed by this template are tagged and named following naming conventions described in the next confluence page [AWS Tagging/Naming Conventions](https://buyermls.atlassian.net/wiki/spaces/PER/pages/2706374657/AWS+Tagging+Naming+Conventions) with the following values for cost tracking and ease of querying related ones:
 
-**Project :** signals
-**CostCode :** signals
-**Environment :** dev, prod
-**Created_By :** Extracted from the last deploy associated IAM user.
-**Terraform :** https://github.com/gitMLS/aws_signlas_infraestructure
+- **Project :** signals
+- **CostCode :** signals
+- **Environment :** dev, prod
+- **Created_By :** Extracted from the last deploy associated IAM user.
+- **Terraform :** https://github.com/gitMLS/aws_signlas_infraestructure
 
 ### Template
 
@@ -41,6 +41,48 @@ The template can be used to create a similar infrastructure. The currently manag
 
 ### Deploying new infrastructure
 
+
+1. Download the repository content and install Terraform.
+
+2. Create a terraforms.tfvars file
+
+    Based on the terraforms.tfvars.example file, create the terraform.tfvars.
+    For example:
+    ```bash
+    sudo cp terraforms.tfvars.example terraform.tfvars
+    ```
+
+3. Replace the values of the terraform.tfvars file.
+
+    The variables.tf file contains the type and description of each variable, read the file
+    and replace the values of terraform.tfvars as needed.
+
+4. Deploy it.
+    
+    Deploy the infrastructure using the following commands:
+    ```bash
+    terraform init
+    terraform plan 
+    terraform apply
+    ```
+
 ### Deploying new stage on existing infrastructure
+
+1. Download the repository content and install Terraform.
+
+2. Donwload the used terraform.tfvars file and the associated Terraform state management files
+
+    Currently, no defined default location for this purpose exists. This section will be updated
+    when the location is available.
+
+3. Deploy it.
+    
+    Deploy the infrastructure using the following commands:
+    ```bash
+    terraform init
+    terraform plan 
+    terraform apply
+    ```
+
 
 ### Destroying stage on existing infrastructure
