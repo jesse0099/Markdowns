@@ -62,7 +62,6 @@ The template can be used to create a similar infrastructure. The currently manag
     Deploy the infrastructure using the following commands:
     ```bash
     terraform init
-    terraform plan 
     terraform apply
     ```
 
@@ -85,12 +84,11 @@ The template can be used to create a similar infrastructure. The currently manag
     terraform workspace new {workspace_name}
     ```
 
-4. Deploy it.
+5. Deploy it.
     
     Deploy the infrastructure using the following commands:
     ```bash
     terraform init
-    terraform plan 
     terraform apply
     ```
 
