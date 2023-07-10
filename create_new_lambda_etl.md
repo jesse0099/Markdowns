@@ -16,6 +16,7 @@ It is recommended to use lowercase letters, numbers, and hyphens for the service
 - **{image-tag-name}:**
 Placeholder for the name of the Docker image tag.
 It is recommended to use lowercase letters, numbers, and hyphens for the image tag name.
+The image tag name value doesn't need to reference any existing resource; it will be used by serverless to manage the container registry images. It only needs to be compliant with the naming convention.
 
 - **{aws_valid_region}:**
 Placeholder for the AWS region.
