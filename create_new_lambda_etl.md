@@ -12,6 +12,7 @@ The handler property points to the file and module containing the code you want 
 - **{service-name}:**
 Placeholder for the name of the service.
 It is recommended to use lowercase letters, numbers, and hyphens for the service name.
+The service name is used by serverless to name the resources it creates, it doesn't need to reference any existing resource.
 
 - **{image-tag-name}:**
 Placeholder for the name of the Docker image tag.

@@ -1,6 +1,6 @@
 # Overview
 
-![alt text](https://drive.google.com/uc?id=1Of6KIhYgII2ElKOE1cca-Xbbba8Ds4-C)
+![alt text](https://drive.google.com/uc?id=1SafSHb4SjPZtoR6-TgcClIhwTTKIEPMg)
 
 ## Resources
 
@@ -30,10 +30,8 @@ The template can be used to create a similar infrastructure. The currently manag
 * aws_iam_policy.kinesis_put_record_policy
 * aws_iam_role.firehose_role
 * aws_iam_role.kinesis_putrecord_role
-* aws_iam_role.signal_redshift_role
 * aws_kinesis_firehose_delivery_stream.signal_firehose
 * aws_kinesis_stream.signal_stream
-* aws_redshift_cluster.signals_redshift_cluster
 * aws_s3_bucket.signal_bucket
 * aws_security_group.signal_firehose_ingress
 
