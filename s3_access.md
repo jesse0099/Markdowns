@@ -19,14 +19,14 @@
 ### Using the Web Console:
 
 1. **Switching Role**:
-    - Open the provided switch role URL in the format: `[Switch Role](https://signin.aws.amazon.com/switchrole?roleName=YOUR_ROLE_NAME&account=YOUR_ACCOUNT_NAME)`.
+    - Open the provided switch role URL, that will be in the next format: `[Switch Role](https://signin.aws.amazon.com/switchrole?roleName=YOUR_ROLE_NAME&account=YOUR_ACCOUNT_NAME)`.
     - _Example_: [https://signin.aws.amazon.com/switchrole?roleName=user-cross-account-s3-role&account=getbuyside]().
     - AWS will prompt you to sign in if you haven't.
     - Confirm the switch, and you will be switched to the role provided by the external account.
 
 > **Note**: After switching roles successfully, you'll see a chip in the top right corner of the web console displaying the name of the assumed role. This verifies that you have switched roles correctly.
 
-2. **Accessing the S3 Bucket**:
+1. **Accessing the S3 Bucket**:
     - After switching roles, navigate to the provided S3 bucket URL in the format: `[S3 Bucket URL](https://s3.console.aws.amazon.com/s3/buckets/YOUR_BUCKET_NAME?)`.
     - _Example_: [https://s3.console.aws.amazon.com/s3/buckets/user-prod-s3]().
     - You can now view and manage the objects within the bucket, based on permissions granted.
@@ -37,8 +37,43 @@
 
 1. **Setting Up AWS CLI**:
     - If you haven't set up the AWS CLI yet, follow [this guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) to install and configure it.
+    
+> **Note:** This requires using a method to authenticate the CLI. For workloads, static key sets are a preferred approach, but for the workforce, configure IAM Identity Center (Successor to single sign-on) instead.
 
-AWS provides a 
+***Access Keys Setup:***
+
+Once an administrator provides you with a set of access keys, you should configure your CLI to use them. This can be achieved by executing `aws configure` or directly editing the credentials file located at `~/.aws/credentials` (~ is used to refer to the home directory, use your OS's supported notation).
+
+When prompted for the preferred region and output format, select `us-east-1` for the `region` and json for the format.
+
+The `~/.aws/credentials` file should have entries in the following format:
+
+```
+[default]
+aws_access_key_id=**********************
+aws_secret_access_key=******************
+```
+> **Note:** The name inside the [] is arbitrary and is a way to name your key sets
+
+Once you've confirmed that the credentials are in place, edit the `~/.aws/config` file to add the following entry:
+
+The `source_profile` value should point to the credentials file key set name. In this case, it's "default".
+
+```credentials
+[profile chalk-s3]
+role_arn = arn:aws:iam::PercyAccount:role/PercyRole
+source_profile = default
+```
+Once this is done, you can call AWS CLI commands with the `--profile` flag to assume the role.
+
+`aws s3 ls s3-bucket-name --profile chalk-s3`
+
+Not including the `--profile` flag will execute CLI commands using your own credentials, essentially rejecting actions over our bucket.
+
+`An error occurred (AccessDenied) when calling the ListObjectsV2 operation: A
+ccess Denied`
+
+IAM Identity Center:
 
 #### For CLI and third party tools use:
 
@@ -47,6 +82,8 @@ AWS provides a
 	- Download the provided script for assuming the role from these gists: [PowerShell](https://gist.github.com/jesse0099/d4f5399e68c1459057b09500724b561d), [Bash](https://gist.github.com/jesse0099/fafcfbee431bd69bef71d8a57fc9586e). Save the script on your local machine.
 
 2. **Assuming Role using the Script**:
+
+    The script's assume role functionality will return a set of temporary credentials that can be used with third-party tools or for CLI usage (it actually sets the CLI credentials at the environment level with the returned values; reset the credentials when you want to use your own keys).
 
     - **PowerShell**:
         - Open PowerShell Core and navigate to the location of the downloaded script.
