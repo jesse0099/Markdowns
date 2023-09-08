@@ -73,7 +73,7 @@ Not including the `--profile` flag will execute CLI commands using your own cred
 `An error occurred (AccessDenied) when calling the ListObjectsV2 operation: A
 ccess Denied`
 
-IAM Identity Center:
+***IAM Identity Center:***
 
 #### For CLI and third party tools use:
 
