@@ -20,7 +20,7 @@
 
 1. **Switching Role**:
     - Open the provided switch role URL, that will be in the next format: `[Switch Role](https://signin.aws.amazon.com/switchrole?roleName=YOUR_ROLE_NAME&account=YOUR_ACCOUNT_NAME)`.
-    - _Example_: [https://signin.aws.amazon.com/switchrole?roleName=user-cross-account-s3-role&account=getbuyside]().
+    - _Example_: [https://signin.aws.amazon.com/switchrole?roleName=user-cross-account-s3-role&account=getbuyside](https://signin.aws.amazon.com/switchrole?roleName=user-cross-account-s3-role&account=getbuyside).
     - AWS will prompt you to sign in if you haven't.
     - Confirm the switch, and you will be switched to the role provided by the external account.
 
@@ -28,7 +28,7 @@
 
 1. **Accessing the S3 Bucket**:
     - After switching roles, navigate to the provided S3 bucket URL in the format: `[S3 Bucket URL](https://s3.console.aws.amazon.com/s3/buckets/YOUR_BUCKET_NAME?)`.
-    - _Example_: [https://s3.console.aws.amazon.com/s3/buckets/user-prod-s3]().
+    - _Example_: [https://s3.console.aws.amazon.com/s3/buckets/user-prod-s3](https://s3.console.aws.amazon.com/s3/buckets/user-prod-s3).
     - You can now view and manage the objects within the bucket, based on permissions granted.
 
 ### Programatic access:
