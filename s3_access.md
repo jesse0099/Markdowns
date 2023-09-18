@@ -55,7 +55,7 @@ aws_secret_access_key=******************
 ```
 > **Note:** The name inside the [] is arbitrary and is a way to name your key sets
 
-Once you've confirmed that the credentials are in place, edit the ***`~/.aws/config`***. It should look like this:
+**Once you've confirmed that the credentials are in place, edit the** ***`~/.aws/config`***. It should look like this:
 
 ```
 [default]
@@ -63,7 +63,7 @@ region = us-east-1
 output = json 
 ```
 
-Now, we need to add the next entry:
+**Now, we need to add the next entry:**
 
 ```credentials
 [profile chalk-s3]
@@ -71,7 +71,7 @@ role_arn = arn:aws:iam::PercyAccount:role/PercyRole
 source_profile = default
 ```
 
-The ***`~/.aws/config`*** should look like this at the end:
+*The* ***`~/.aws/config`*** **should look like this at the end**:
 
 ```credentials
 [default]
@@ -83,7 +83,7 @@ role_arn = arn:aws:iam::PercyAccount:role/PercyRole
 source_profile = default
 ```
 
-Remember to change the role_arn value with the one with ptovided for you.Also, the ***`source_profile`*** value should point to the credentials file key set name. In this case, it's "default".
+Remember to change the **role_arn** value with the one with provided for you.Also, the ***`source_profile`*** value should point to the credentials file key set name. In this case, it's "default".
 
 Once this is done, you can call AWS CLI commands with the `--profile` flag to assume the role.
 
