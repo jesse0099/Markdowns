@@ -91,8 +91,7 @@ Once this is done, you can call AWS CLI commands with the `--profile` flag to as
 
 Not including the `--profile` flag will execute CLI commands using your own credentials, essentially rejecting actions over our bucket.
 
-`An error occurred (AccessDenied) when calling the ListObjectsV2 operation: A
-ccess Denied`
+`An error occurred (AccessDenied) when calling the ListObjectsV2 operation: Access Denied`
 
 ***IAM Identity Center:***
 
