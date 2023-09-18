@@ -107,6 +107,8 @@ Once this is done, you can call AWS CLI commands with the `--profile` flag to as
     The script's assume role functionality will return a set of temporary credentials that can be used with third-party tools or for CLI usage (it actually sets the CLI credentials at the environment level with the returned values; reset the credentials when you want to use your own keys).
 > **Note**: substitute **"arn:aws:iam::AccountA:role/AccountARole"**  with the role arn provided to you.
 
+> **Note:**: substitute **"MySession"** an arbitrary string to identify tour session.
+
     - **PowerShell**:
         - Open PowerShell Core and navigate to the location of the downloaded script.
         - To assume a role, execute the script by running the command:
