@@ -83,7 +83,7 @@ role_arn = arn:aws:iam::PercyAccount:role/PercyRole
 source_profile = default
 ```
 
-Remember to change the **role_arn** value with the one with provided for you.Also, the ***`source_profile`*** value should point to the credentials file key set name. In this case, it's "default".
+Remember to change the **role_arn** value with the one with provided for you.
 
 Once this is done, you can call AWS CLI commands with the `--profile` flag to assume the role.
 
