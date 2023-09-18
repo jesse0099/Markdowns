@@ -83,16 +83,15 @@ role_arn = arn:aws:iam::PercyAccount:role/PercyRole
 source_profile = default
 ```
 
-Remember to change the **role_arn** value with the one with provided for you.
+> **Note**: Remember to change the **role_arn** value with the one with provided for you.
 
 Once this is done, you can call AWS CLI commands with the `--profile` flag to assume the role.
 
 `aws s3 ls s3-bucket-name --profile chalk-s3`
 
-Substitute `s3-bucket-name` with the name of the bucket provided to you. 
+> **Note**: Substitute `s3-bucket-name` with the name of the bucket provided to you. 
 
-Not including the `--profile {value}` flag will execute CLI commands using your own credentials, essentially rejecting actions over our bucket.
-
+> **Note**: Not including the `--profile {value}` flag will execute CLI commands using your own credentials, essentially rejecting actions over our bucket.
 `An error occurred (AccessDenied) when calling the ListObjectsV2 operation: Access Denied`
 
 ***IAM Identity Center:***
