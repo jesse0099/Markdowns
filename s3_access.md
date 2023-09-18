@@ -105,6 +105,7 @@ Once this is done, you can call AWS CLI commands with the `--profile` flag to as
 2. **Assuming Role using the Script**:
 
     The script's assume role functionality will return a set of temporary credentials that can be used with third-party tools or for CLI usage (it actually sets the CLI credentials at the environment level with the returned values; reset the credentials when you want to use your own keys).
+> **Note**: substitute **"arn:aws:iam::AccountA:role/AccountARole"**  with the role arn provided to you.
 
     - **PowerShell**:
         - Open PowerShell Core and navigate to the location of the downloaded script.
@@ -134,7 +135,7 @@ Once this is done, you can call AWS CLI commands with the `--profile` flag to as
 
 > **Note**: After assuming the role through CLI, you can verify your current identity by running the command `aws sts get-caller-identity`. If successful, this will display the ARN of the assumed role.
 
-3. **Using S3 Clients with Temporary Credentials**:
+1. **Using S3 Clients with Temporary Credentials**:
     For tools like WinSCP or Filezilla, they require AWS access key, secret key, and a session token to access S3.
 
     - **WinSCP**:
