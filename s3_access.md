@@ -114,7 +114,7 @@ Once this is done, you can call AWS CLI commands with the `--profile` flag to as
           ```
         - To reset credentials, run:
           ```powershell
-          ./script_name.ps1 --reset_credentials
+          ./script_name.ps1 -reset_credentials
           ```
 
     - **Bash**:
