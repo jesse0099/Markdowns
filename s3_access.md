@@ -46,7 +46,7 @@ Once an administrator provides you with a set of access keys, you should configu
 
 When prompted for the preferred region and output format, select `us-east-1` for the `region` and json for the format.
 
-The `~/.aws/credentials` file should have entries in the following format:
+The ***`~/.aws/credentials`*** file should have entries in the following format:
 
 ```
 [default]
@@ -55,9 +55,9 @@ aws_secret_access_key=******************
 ```
 > **Note:** The name inside the [] is arbitrary and is a way to name your key sets
 
-Once you've confirmed that the credentials are in place, edit the `~/.aws/config` file to add the following entry:
+Once you've confirmed that the credentials are in place, edit the ***`~/.aws/config`*** file to add the following entry:
 
-The `source_profile` value should point to the credentials file key set name. In this case, it's "default".
+The ***`source_profile`*** value should point to the credentials file key set name. In this case, it's "default".
 
 ```credentials
 [profile chalk-s3]
