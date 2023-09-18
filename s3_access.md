@@ -89,7 +89,9 @@ Once this is done, you can call AWS CLI commands with the `--profile` flag to as
 
 `aws s3 ls s3-bucket-name --profile chalk-s3`
 
-Not including the `--profile` flag will execute CLI commands using your own credentials, essentially rejecting actions over our bucket.
+Substitute `s3-bucket-name` with the name of the bucket provided to you. 
+
+Not including the `--profile {value}` flag will execute CLI commands using your own credentials, essentially rejecting actions over our bucket.
 
 `An error occurred (AccessDenied) when calling the ListObjectsV2 operation: Access Denied`
 
