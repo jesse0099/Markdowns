@@ -125,12 +125,24 @@ Once this is done, you can call AWS CLI commands with the `--profile` flag to as
           ```
         - To assume a role, execute the script by running the command:
           ```bash
-          ./script_name.sh "arn:aws:iam::AccountA:role/AccountARole" "MySessionName"
+          ./script_name.sh --assume_role "arn:aws:iam::AccountA:role/AccountARole" "MySessionName"
           ```
         - To reset credentials, run:
           ```bash
           ./script_name.sh --reset_credentials
           ```
+> **Note:** If environment variables need to be available after the Bash script execution ends, consider sourcing it instead of just executing it. If you source it for assuming a role, remember to source it again for resetting credentials.
+
+**Example:**
+
+```bash
+# Assuming Role
+source ./script_name.sh --assume_role "arn:aws:iam::AccountA:role/AccountARole" "MySessionName"
+
+# Resetting **Credentials**
+source ./script_name.sh --reset_credentials
+```
+ 
 > **Note**: substitute **"arn:aws:iam::AccountA:role/AccountARole"**  with the role arn provided to you.
 
 > **Note:**: substitute **"MySession"** an arbitrary string to identify tour session.
