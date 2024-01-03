@@ -80,7 +80,20 @@ If ACM supports the algorithm ([Prerequisites for importing certificates](https:
 
 ## **Import cert.pem and no-password-cert-key.pem file pair to ACM.**
 
-The cert.pem and no-password-cert-key.pem files are all you need to import the certs to ACM. The root certificate of the CA is not required.
+The cert.pem and no-password-cert-key.pem files are all you need to import the certs to ACM. The root certificate of the CA is not required. 
+
+## **Import the cert.pem and no-password-cert-key.pem file pair to ACM when an intermediate certificate is required.**
+
+It's true that the certificate of the CA is not always necessary, but some certificates will require an intermediate one. To determine whether it's required or not, there are some easy-to-use tools, such as:
+
+- [sslshopper](https://www.sslshopper.com/)
+- [ssllabs](https://www.ssllabs.com/ssltest/analyze.html?d=findbuyersbx.elliman.com)
+
+ Both will provide information about the certification chain and its validity. SSLLabs offers more in-depth information, which can be useful under certain circumstances.
+
+For example, with Entrust L1K certificates, SSLHopper and browsers might not show any issues with the certificate, but more restrictive tests, like the Facebook opengraph API, will. If an intermediate certificate is missing, these tools will show a missing link in the certification chain.
+
+The missing intermediate certificate may or may not be present in the provided certificates files. To find the certificate CA, check the Bag Attributes in the issuer section, and once located, visit the CA's website. They often have a section with the types of certificates and their corresponding intermediate certificates. Download it and use it in the appropriate ACM section. The rest of the process remains unchanged.
 
 - [Import from console](https://docs.aws.amazon.com/acm/latest/userguide/import-certificate-api-cli.html#import-certificate-api:~:text=Import%20(AWS%20CLI)-,Import%20(console),-The%20following%20example)
 
